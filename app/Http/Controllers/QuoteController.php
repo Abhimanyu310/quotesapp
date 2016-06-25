@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Author;
+use App\AuthorLog;
 use App\Events\QuoteCreated;
 use App\Quote;
 use Illuminate\Http\Request;
@@ -69,5 +70,12 @@ class QuoteController extends Controller{
             'success' => $msg
         ]);
 
+    }
+
+    public function getMailCallback($author_name){
+        $author_log = new AuthorLog();
+        $author_log->author = $author_name;
+        $author_log->save();
+        return view('email.callback', ['author' => $author_name]);
     }
 }
