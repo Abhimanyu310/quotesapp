@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', [
+Route::get('/{author?}', [
     'uses' => 'QuoteController@getIndex',
     'as' => 'index'
 ]);
