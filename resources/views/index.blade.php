@@ -12,17 +12,22 @@
 
     <section class="quotes">
         <h1>Latest Quotes</h1>
-        <article class="quote">
-            <div class="delete"><a href="#">x</a></div>
-            Quote Text
-            <div class="info">Created by <a>Silencer</a> on ...</div>
-        </article>
-        Pagination
+        @for($i=0; $i < count($quotes); $i++)
+            <article class="quote">
+                <div class="delete"><a href="#">x</a></div>
+                Quote Text
+                <div class="info">Created by <a>Silencer</a> on ...</div>
+            </article>
+        @endfor
+        <div class="pagination">
+            Pagination
+        </div>
+
     </section>
 
     <section class="edit-quote">
         <h1>Add a Quote</h1>
-        <form>
+        <form method="post" action="{{ route('create') }}">
             <div class="input-group">
                 <label for="author">Your Name:</label>
                 <input type="text" name="author" id="author" placeholder="Your Name">
