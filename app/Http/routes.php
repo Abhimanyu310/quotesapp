@@ -47,4 +47,8 @@ Route::get('/admin/dashboard', [
     'as' => 'admin.dashboard'
 ]);
 
+Route::get('/admin/logout', [
+    'uses' => 'AdminController@getLogout',
+    'as' => 'admin.logout'
+]);
 
