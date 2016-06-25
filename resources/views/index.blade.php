@@ -15,8 +15,8 @@
         @for($i=0; $i < count($quotes); $i++)
             <article class="quote">
                 <div class="delete"><a href="#">x</a></div>
-                Quote Text
-                <div class="info">Created by <a>Silencer</a> on ...</div>
+                {{ $quotes[$i]->quote }}
+                <div class="info">Created by <a>{{ $quotes[$i]->author->name }}</a> on {{ $quotes[$i]->created_at }}</div>
             </article>
         @endfor
         <div class="pagination">
